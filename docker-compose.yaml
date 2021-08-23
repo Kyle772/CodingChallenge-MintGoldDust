@@ -89,7 +89,8 @@ services:
     ports:
       - "3001:3000"
     build:
-      context: ./
+      context: ./web
+      dockerfile: Dockerfile
     networks:
       - app-network
 
