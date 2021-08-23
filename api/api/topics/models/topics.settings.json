@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topics",
+  "info": {
+    "name": "Topics",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blogs": {
+      "via": "topics",
+      "collection": "blog",
+      "dominant": true
+    },
+    "projects": {
+      "via": "topics",
+      "collection": "project",
+      "dominant": true
+    },
+    "technologies": {
+      "collection": "technology",
+      "via": "topics",
+      "dominant": true
+    },
+    "languages": {
+      "collection": "languages",
+      "via": "topics",
+      "dominant": true
+    },
+    "slug": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+devenvcreds
+mongodump --out imports --authenticationDatabase admin --username mongoadmin --password mongofier123

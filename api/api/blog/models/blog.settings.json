@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "Blog",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "technologies": {
+      "via": "blogs",
+      "collection": "technology",
+      "dominant": true
+    },
+    "slug": {
+      "type": "string"
+    },
+    "topics": {
+      "via": "blogs",
+      "collection": "topics"
+    },
+    "github": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}
