@@ -1,4 +1,9 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+
+import Auth from '../pagerouter/auth/Auth'
+import Feed from '../pagerouter/feed/Feed'
+import Profile from '../pagerouter/profile/Profile'
 
 export default function Pagerouter() {
   return (
@@ -8,7 +13,7 @@ export default function Pagerouter() {
         <Route exact path="/feed"><Feed /></Route>
         <Route exact path="/profile"><Profile /></Route>
         <Route exact path="/profile/:pid"><Profile /></Route>
-      </React.Fragment>
-    </div>
+      </Switch>
+    </React.Fragment>
   )
 }
