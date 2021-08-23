@@ -1,5 +1,8 @@
 import React from 'react';
+
 import './App.scss';
+import '../components/card/Card.scss'
+
 import Header from '../app/Header'
 import Pagerouter from '../pagerouter/Pagerouter'
 
