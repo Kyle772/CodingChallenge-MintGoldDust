@@ -23,6 +23,7 @@ header {
     width: 100%;
     max-width: 768px;
     margin: auto;
+
   }
 }
 
@@ -59,24 +60,45 @@ header {
   }
 }
 
-.button {
+.button,
+a.button,
+input.button {
   border-radius: 5px;
   padding: .25rem 1rem;
+  border: none;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1)
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
 .button-con {
   display: flex;
 
+  &.space {
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .button {
-    background-color: purple;
-    color: rgb(56, 50, 50);
+    background-color: unset;
+    color: rgba(0, 0, 0, .75);
+    cursor: pointer;
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 100ms ease-in-out;
 
     &:hover {
-      box-shadow: 0 0 3px 0 white;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
     }
+
+    &.blurple {
+      background-color: #6e85d3;
+      color: white;
+
+      &:hover {
+        background-color: #384c8d;
+      }
+    }
+
   }
 }

@@ -1,0 +1,17 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  .poop {
+    width: 100px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 3rem;
+  }
+
+  input {
+    max-width: 100%;
+  }
+}
