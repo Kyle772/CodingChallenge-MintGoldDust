@@ -585,6 +585,37 @@
               }
             }
           },
+          "post": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "thought": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "user_likes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -600,6 +631,9 @@
             "type": "string"
           },
           "for_user": {
+            "type": "string"
+          },
+          "post": {
             "type": "string"
           },
           "published_at": {

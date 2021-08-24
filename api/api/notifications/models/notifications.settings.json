@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "notifications",
   "info": {
-    "name": "notifications"
+    "name": "notifications",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -20,6 +21,9 @@
     "for_user": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "post": {
+      "model": "posts"
     }
   }
 }

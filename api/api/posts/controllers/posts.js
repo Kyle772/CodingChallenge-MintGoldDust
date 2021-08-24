@@ -23,6 +23,12 @@ module.exports = {
       post_entity.user_likes.push(userid);
       post_entity = await strapi.services.posts.update({ id }, post_entity);
       ctx.response.status = 200
+      await strapi.services.notifications.create({
+        title: "You have a new like",
+        content: "Wow what a like!",
+        for_user: post_entity.user.id,
+        post: post_entity.id
+      })
       return sanitizeEntity(post_entity, { model: strapi.models.posts });
     } else {
       ctx.response.status = 409 // Conflict
