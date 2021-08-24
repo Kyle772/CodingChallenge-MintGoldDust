@@ -44,8 +44,13 @@ header {
 
   .container {
     display: flex;
+    padding: unset;
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+
+  .notif-indic {
+    margin-right: 1rem;
   }
 
   ul.auth {

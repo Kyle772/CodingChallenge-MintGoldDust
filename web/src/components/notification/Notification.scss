@@ -21,9 +21,11 @@
   }
 
   &.active {
-    max-height: unset;
     padding: 1rem;
     padding-top: calc(75px + 1rem);
+    max-height: 100vh;
+    overflow-y: auto;
+    margin-right: -20px;
   }
 
 
