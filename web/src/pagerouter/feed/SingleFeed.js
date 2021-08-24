@@ -91,7 +91,7 @@ export default function Feed() {
 
   return (
     <React.Fragment>
-      <section className="feed">
+      <section className="feed single">
         <div className="container">
           {feed?.map(post => {
             return (

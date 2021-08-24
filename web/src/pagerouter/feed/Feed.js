@@ -90,20 +90,23 @@ export default function Feed() {
   return (
     <React.Fragment>
       <section className="feed">
-
         <div className="container">
-          <div className="card">
-            <div className="intro">Welcome back {userData ? userData.username : <div className="short-text-placeholder"></div>},</div>
-            <form onSubmit={(e) => handleSubmit(e)} id="Thoughts">
-              <textarea name="thoughts" class="thoughts"></textarea>
-              <button type="submit" className="button blurple">Yeet</button>
-            </form>
+          <div className="col-1">
+            <div className="card">
+              <div className="intro">Welcome back {userData ? userData.username : <div className="short-text-placeholder"></div>},</div>
+              <form onSubmit={(e) => handleSubmit(e)} id="Thoughts">
+                <textarea name="thoughts" class="thoughts"></textarea>
+                <button type="submit" className="button blurple">Yeet</button>
+              </form>
+            </div>
           </div>
-          {feed?.map(post => {
-            return (
-              <Post post={post} setFeed={setFeed} />
-            )
-          })}
+          <div className="col-2">
+            {feed?.map(post => {
+              return (
+                <Post post={post} setFeed={setFeed} />
+              )
+            })}
+          </div>
         </div>
       </section>
     </React.Fragment>
