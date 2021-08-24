@@ -58,6 +58,17 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "following": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "followed_by",
+      "dominant": true
+    },
+    "followed_by": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "following"
     }
   }
 }

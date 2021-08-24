@@ -704,6 +704,18 @@
               "role": {
                 "type": "string"
               },
+              "following": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "followed_by": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -750,6 +762,18 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "following": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "followed_by": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"

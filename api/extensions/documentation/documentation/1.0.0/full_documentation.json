@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/24/2021 3:05:12 AM"
+    "x-generation-date": "08/24/2021 4:08:10 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3489,6 +3489,18 @@
               "role": {
                 "type": "string"
               },
+              "following": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "followed_by": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -3574,6 +3586,18 @@
               "role": {
                 "type": "string"
               },
+              "following": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "followed_by": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -3620,6 +3644,18 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "following": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "followed_by": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"
@@ -3761,6 +3797,18 @@
                 "role": {
                   "type": "string"
                 },
+                "following": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "followed_by": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -3873,6 +3921,126 @@
                 "type": "string"
               }
             }
+          },
+          "following": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "following": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "followed_by": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "followed_by": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "following": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "followed_by": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -3914,6 +4082,18 @@
           },
           "role": {
             "type": "string"
+          },
+          "following": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "followed_by": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
