@@ -1,6 +1,7 @@
 body {
   font-family: 'Lato', sans-serif;
   background-color: #403F48;
+  position: relative;
 }
 
 h1,
@@ -23,7 +24,9 @@ header {
     width: 100%;
     max-width: 768px;
     margin: auto;
-
+    position: relative;
+    padding: 0 1rem;
+    box-sizing: border-box;
   }
 }
 
@@ -33,6 +36,11 @@ header {
   justify-content: space-between;
   margin-bottom: 3rem;
   padding: 2rem;
+  height: 75px;
+  box-sizing: border-box;
+  background-color: #3a3941; // Solid color for rgba(0,0,0,.1)
+  z-index: 11;
+  position: relative;
 
   .container {
     display: flex;
