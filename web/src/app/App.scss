@@ -65,11 +65,10 @@ a.button,
 input.button {
   border-radius: 5px;
   padding: .25rem 1rem;
+  cursor: pointer;
   border: none;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+  transition: box-shadow 100ms ease-in-out;
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
 
   &:hover {
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
@@ -82,30 +81,27 @@ input.button {
     &:hover {
       background-color: #384c8d;
     }
-
   }
-}
 
-.button {
-  background-color: unset;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 100ms ease-in-out;
+  &.clean {
+    background-color: unset;
+    color: rgba(0, 0, 0, .8);
 
-  .button-con {
-    display: flex;
-
-    &.space {
-      justify-content: space-between;
-      width: 100%;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 }
 
-.card>.button {
-  color: rgba(0, 0, 0, .75);
+.button-con {
+  display: flex;
+
+  &.space {
+    justify-content: space-between;
+    width: 100%;
+  }
 }
+
 
 p.message {
   background-color: #6e85d3;

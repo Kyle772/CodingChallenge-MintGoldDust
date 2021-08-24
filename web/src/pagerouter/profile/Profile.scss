@@ -1,0 +1,29 @@
+.profile {
+  .card {
+    margin-bottom: 1rem;
+
+    &.profile {
+      display: flex;
+
+      .photo {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(0, 0, 0, .1);
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 1rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .info {
+        h1 {
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+
+}

@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { UserDataContext } from '../../context/UserData'
 import './Feed.scss'
-import Post from './Post'
+import Post from '../../components/post/Post'
 
 export default function Feed() {
   let { jwt, userData } = useContext(UserDataContext)
@@ -65,7 +65,7 @@ export default function Feed() {
             }
             thought
             user_likes {
-              username
+              id
             }
           }
         }`}
@@ -77,54 +77,6 @@ export default function Feed() {
       setError("There was an error")
     } else if (resp) {
       setFeed(resp.posts)
-    }
-  }
-
-  const likePost = async (pid) => {
-    let bearer = 'Bearer ' + jwt;
-    let resp = await fetch('/api/posts/like/' + pid, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': bearer
-      },
-      body: JSON.stringify({
-        postid: pid,
-        userid: userData.id
-      }),
-    })
-      .then(res => res.json())
-      .then(res => res.data)
-
-    if (resp?.error?.length > 0) {
-      setError(resp.error)
-    } else if (resp) {
-      feed = feed.filter(post => post.id === resp.updatePost.post.id)[0].user_likes = resp.updatePost.post.user_likes
-      setFeed(feed)
-    }
-  }
-
-  const unlikePost = async (pid) => {
-    let bearer = 'Bearer ' + jwt;
-    let resp = await fetch('/api/posts/unlike/' + pid, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': bearer
-      },
-      body: JSON.stringify({
-        postid: pid,
-        userid: userData.id
-      }),
-    })
-      .then(res => res.json())
-      .then(res => res.data)
-
-    if (resp?.error?.length > 0) {
-      setError(resp.error)
-    } else if (resp) {
-      feed = feed.filter(post => post.id === resp.updatePost.post.id)[0].user_likes = resp.updatePost.post.user_likes
-      setFeed(feed)
     }
   }
 
@@ -148,7 +100,7 @@ export default function Feed() {
           </div>
           {feed?.map(post => {
             return (
-              <Post post={post} likePost={likePost} unlikePost={unlikePost} />
+              <Post post={post} setFeed={setFeed} />
             )
           })}
         </div>

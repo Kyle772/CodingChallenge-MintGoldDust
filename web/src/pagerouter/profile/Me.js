@@ -8,7 +8,6 @@ export default function Profile() {
   let { jwt, userData } = useContext(UserDataContext)
   let [error, setError] = useState(null)
   let [feed, setFeed] = useState(null)
-  let [user, setUser] = useState(null)
 
   const getFeed = async () => {
     let bearer = 'Bearer ' + jwt;
@@ -20,32 +19,25 @@ export default function Profile() {
       },
       body: JSON.stringify({
         query: `query {
-        posts (where: {user: {username: "` + window.location.pathname.split("/").slice(-1) + `"}}) {
+        posts (where: {user: {username: "` + userData.username + `"}}) {
           id
-          thought
-          user {
-            username
+            user {
+              username
+            }
+            thought
+            user_likes {
+              id
+            }
           }
-          user_likes {
-            id
-          }
-        }
-        users (where: {username: "` + window.location.pathname.split("/").slice(-1) + `"}) {
-          username
-          email
-        }
-      }`}
+        }`}
       ),
     }).then(res => res.json())
       .then(res => res.data)
-      .then(res => {
-        console.log(res)
-        setFeed(res.posts)
-        setUser(res.users[0])
-      })
 
     if (resp?.error?.length > 0) {
       setError("There was an error")
+    } else if (resp) {
+      setFeed(resp.posts)
     }
   }
 
@@ -53,7 +45,6 @@ export default function Profile() {
     if (userData) {
       getFeed()
     }
-    console.log(window.location.pathname.split("/"))
   }, [userData])
 
   return (
@@ -65,8 +56,8 @@ export default function Profile() {
               <img src={poop} />
             </div>
             <div className="info">
-              <h1>{user?.username}</h1>
-              <p>{user?.email}</p>
+              <h1>{userData?.username}</h1>
+              <p>{userData?.email}</p>
             </div>
           </div>
           {feed?.map(post => {
