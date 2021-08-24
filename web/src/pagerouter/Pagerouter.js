@@ -6,6 +6,7 @@ import Logout from '../pagerouter/auth/Logout'
 import Register from '../pagerouter/auth/Register'
 import Feed from '../pagerouter/feed/Feed'
 import Profile from '../pagerouter/profile/Profile'
+import FourOFour from '../pagerouter/fourofour/FourOFour'
 
 export default function Pagerouter() {
   return (
@@ -18,6 +19,7 @@ export default function Pagerouter() {
         <Route exact path="/feed"><Feed /></Route>
         <Route exact path="/profile"><Profile /></Route>
         <Route exact path="/profile/:pid"><Profile /></Route>
+        <Route path="*"><FourOFour /></Route>
       </Switch>
     </React.Fragment>
   )

@@ -1,0 +1,19 @@
+.feed {
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    .thoughts {
+      margin-top: 1rem;
+    }
+  }
+
+  .short-text-placeholder {
+    display: inline-block;
+    height: 1rem;
+    margin-bottom: -.1rem;
+    width: 70px;
+    background-color: rgba(0, 0, 0, .1)
+  }
+}
