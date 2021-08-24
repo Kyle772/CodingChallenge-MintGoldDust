@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import Sidebar from '../app/sidebar/Sidebar.js';
+
 export const UserDataContext = createContext();
 
 export const UserDataContextProvider = (props) => {
@@ -55,10 +55,16 @@ export const UserDataContextProvider = (props) => {
     }
   }, [jwt, updateUserData])
 
-  return (<UserDataContext.Provider value={{ jwt: jwt, userData: userData, isReady: isReady, updateUserData: updateUserData, setUpdateUserData: setUpdateUserData }}>
+  return (<UserDataContext.Provider value={{ setJwt: setJwt, jwt: jwt, userData: userData, isReady: isReady, updateUserData: updateUserData, setUpdateUserData: setUpdateUserData }}>
     {error !== "" ? <React.Fragment>
-      <Sidebar type={userData && userData.role ? userData.role.type : ""}></Sidebar>
-      <section id="dashboard"><p className="context error message">{error}</p></section>
+      <section>
+        <div className="container">
+          <p className="context error message">{error}</p>
+          <div className="close" onClick={setError("")}>
+            X
+          </div>
+        </div>
+      </section>
     </React.Fragment> : ""}
     {props.children}
   </UserDataContext.Provider>);

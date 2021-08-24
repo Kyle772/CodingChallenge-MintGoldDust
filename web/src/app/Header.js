@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { UserDataContext } from '../context/UserData'
 
 export default function Header() {
+  let { jwt } = useContext(UserDataContext)
+
   return (
     <React.Fragment>
       <header>
@@ -9,8 +12,10 @@ export default function Header() {
             <li><a className="button" href="/feed">Feed</a></li>
           </ul>
           <ul className="auth">
-            <li><a className="button" href="/">Login</a></li>
-            <li><a className="button" href="/logout">Logout</a></li>
+            {jwt
+              ? <li><a className="button" href="/logout">Logout</a></li>
+              : <li><a className="button" href="/">Login</a></li>
+            }
           </ul>
         </div>
       </header>
