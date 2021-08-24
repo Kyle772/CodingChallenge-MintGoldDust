@@ -2,11 +2,13 @@ import React, { useContext, useState, useEffect } from 'react'
 import { UserDataContext } from '../../context/UserData'
 import './Feed.scss'
 import Post from '../../components/post/Post'
+import Notification, { NotificationTray } from '../../components/notification/Notification'
 
 export default function Feed() {
   let { jwt, userData } = useContext(UserDataContext)
   let [error, setError] = useState(null)
   let [feed, setFeed] = useState(null)
+  let [notifications, setNotifications] = useState(null)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -58,7 +60,7 @@ export default function Feed() {
       },
       body: JSON.stringify({
         query: `query {
-          posts {
+          posts (where: {id: "` + window.location.pathname.split("/").slice(-1) + `"}) {
             id
             thought
             user {
@@ -90,15 +92,7 @@ export default function Feed() {
   return (
     <React.Fragment>
       <section className="feed">
-
         <div className="container">
-          <div className="card">
-            <div className="intro">Welcome back {userData ? userData.username : <div className="short-text-placeholder"></div>},</div>
-            <form onSubmit={(e) => handleSubmit(e)} id="Thoughts">
-              <textarea name="thoughts" class="thoughts"></textarea>
-              <button type="submit" className="button blurple">Yeet</button>
-            </form>
-          </div>
           {feed?.map(post => {
             return (
               <Post post={post} setFeed={setFeed} />

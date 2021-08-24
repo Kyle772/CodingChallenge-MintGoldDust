@@ -5,6 +5,7 @@ import Auth from '../pagerouter/auth/Auth'
 import Logout from '../pagerouter/auth/Logout'
 import Register from '../pagerouter/auth/Register'
 import Feed from '../pagerouter/feed/Feed'
+import SingleFeed from '../pagerouter/feed/SingleFeed'
 import Profile from '../pagerouter/profile/Profile'
 import Me from '../pagerouter/profile/Me'
 import FourOFour from '../pagerouter/fourofour/FourOFour'
@@ -18,6 +19,9 @@ export default function Pagerouter() {
         <Route exact path="/login"><Auth /></Route>
         <Route exact path="/logout"><Logout /></Route>
         <Route exact path="/register"><Register /></Route>
+        <Route exact path="/feed/post/:pid"><RoleLocked role="authenticated" redir={Auth}>
+          <SingleFeed />
+        </RoleLocked></Route>
         <Route exact path="/feed"><RoleLocked role="authenticated" redir={Auth}>
           <Feed />
         </RoleLocked></Route>

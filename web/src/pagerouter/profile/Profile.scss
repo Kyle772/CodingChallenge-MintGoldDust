@@ -6,8 +6,12 @@
       display: flex;
 
       .photo {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
+        max-width: 75px;
+        max-height: 75px;
+        min-width: 75px;
+        min-height: 75px;
         background-color: rgba(0, 0, 0, .1);
         border-radius: 50%;
         overflow: hidden;
@@ -20,7 +24,7 @@
 
       .info {
         h1 {
-          margin-bottom: unset;
+          margin: unset;
         }
       }
     }
