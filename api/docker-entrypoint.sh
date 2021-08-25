@@ -29,14 +29,14 @@ if [ "$1" = "strapi" ]; then
     if [ -f "yarn.lock" ]; then
 
       yarn install
+      yarn build --clean
 
     else
 
-      npm install 
+      npm install
+      npm run build --clean
 
     fi
-
-    yarn build
 
   fi
 
