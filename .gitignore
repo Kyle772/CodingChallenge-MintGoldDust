@@ -1,3 +1,4 @@
 *.env
 *.pyc
-certbot/
+**/certbot/conf/**
+**/certbot/www/**
