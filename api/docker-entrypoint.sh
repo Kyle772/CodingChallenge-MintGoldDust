@@ -32,7 +32,7 @@ if [ "$1" = "strapi" ]; then
 
     else
 
-      npm install
+      npm install 
 
     fi
 
