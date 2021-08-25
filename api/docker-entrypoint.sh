@@ -29,7 +29,7 @@ if [ "$1" = "strapi" ]; then
     if [ -f "yarn.lock" ]; then
 
       yarn install
-      yarn build --clean
+      yarn build --clean 
 
     else
 
