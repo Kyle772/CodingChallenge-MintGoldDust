@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/24/2021 4:56:28 PM"
+    "x-generation-date": "08/25/2021 6:21:14 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -302,7 +302,7 @@
     "/notifications/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of notifications documents",
+        "description": "Retrieve the number of notifications documents",
         "responses": {
           "200": {
             "description": "Retrieve notifications document(s)",
@@ -813,7 +813,7 @@
     "/posts/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of posts documents",
+        "description": "Retrieve the number of posts documents",
         "responses": {
           "200": {
             "description": "Retrieve posts document(s)",

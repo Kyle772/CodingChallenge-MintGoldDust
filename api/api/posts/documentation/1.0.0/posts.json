@@ -257,7 +257,7 @@
     "/posts/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of posts documents",
+        "description": "Retrieve the number of posts documents",
         "responses": {
           "200": {
             "description": "Retrieve posts document(s)",

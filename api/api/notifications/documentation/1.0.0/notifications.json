@@ -257,7 +257,7 @@
     "/notifications/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of notifications documents",
+        "description": "Retrieve the number of notifications documents",
         "responses": {
           "200": {
             "description": "Retrieve notifications document(s)",
